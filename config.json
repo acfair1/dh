@@ -1,0 +1,70 @@
+{
+    "general": {
+        "pathRelative": {
+            "logPath": "./log",
+            "lastKeyPath": "./last_key",
+            "maxKeyPath": "./max_key",
+            "responsePath": "./responses",
+            "errPath": "./err",
+            "docStatsPath": "./documentStats"
+        },
+        "userRoot": "@abc.com",
+        "password": "somepassword",
+        "allowDuplicate": true,
+        "persist": true,
+        "grade": true,
+        "overridePatient": false,
+        "tHeaderAuthName": "Authorization",
+        "tHeaderContTypeName": "Content-Type",
+        "contentType": "text/plain",
+        "limit": 100000,
+        "statsLimit": 100000
+    },
+    "api": {
+        "url1": "http://localhost:1231",
+        "url2": "http://localhost:1232",
+        "url3": "http://localhost:1233",
+        "url4": "http://localhost:1234",
+        "url5": "http://localhost:1235",
+        "url6": "http://localhost:1236",
+        "url7": "http://localhost:1237",
+        "routes": {
+            "doc": "/Document",
+            "login": "/users/login",
+            "gradeCount": "/grade/count"
+        }
+    },
+    "logging": {
+        "appenders": {
+            "out": {
+                "type": "stdout",
+                "layout": {
+                    "type": "colored"
+                }
+            },
+            "app": {
+                "type": "file",
+                "filename": "log/application.log",
+                "maxLogSize": 10485760,
+                "backups": 5,
+                "compress": true
+            },
+            "stats": {
+                "type": "file",
+                "filename": "log/stats.log",
+                "maxLogSize": 1048576,
+                "backups": 5,
+                "compress": true
+            }
+        },
+        "categories": {
+            "default": {
+                "appenders": [
+                    "out",
+                    "app"
+                ],
+                "level": "info"
+            }
+        }
+    }
+}
